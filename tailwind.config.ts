@@ -11,6 +11,7 @@ export default {
       fontFamily: {
         poppins: ['Poppins', 'sans'],
         monteserrat: ['Monteserrat', 'sans'],
+        sansita: ['Sansita', 'sans'],
       },
       colors: {
         background: 'var(--background)',

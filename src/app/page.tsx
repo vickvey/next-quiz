@@ -1,18 +1,16 @@
+import TagRotation from '@/components/TagRotation'
 import Link from 'next/link'
 
 export default function HomePage() {
   return (
-    <div className='bg-gradient-to-br from-slate-700 via-gray-600 to-slate-800 h-screen w-screen flex flex-col justify-center items-center text-[#fff] gap-6'>
-      <h1 className='font-bold font-poppins text-6xl text-white/80'>
+    <div className='px-6 py-40 lg:py-48 flex flex-col lg:justify-center lg:items-center items-start text-[#fff] gap-6'>
+      <h1 className='font-bold font-poppins text-5xl lg:text-8xl text-gray-400/60'>
         Quiz App in NextJS
       </h1>
-      <p className='text-2xl text-white/50'>
-        Are you ready to test your mind?? Are you genius enough to tackle these
-        questions??
-      </p>
-      <div className='p-4 hover:bg-gray-700 hover:bg-transparent hover:rounded-xl hover:transition'>
+      <TagRotation />
+      <div className=' hover:bg-gray-700 hover:bg-transparent hover:rounded-xl hover:transition'>
         <Link href={'/start-quiz'}>
-          <p className='italic text-xl font-monteserrat text-blue-100/60 hover:underline'>
+          <p className='italic text-xl font-monteserrat text-blue-100/60 hover:underline hover:bg-gray-800/60 hover:text-white/90 lg:p-2 rounded'>
             Start the Quiz to find out
           </p>
         </Link>
