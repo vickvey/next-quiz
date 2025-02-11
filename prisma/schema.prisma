@@ -1,0 +1,34 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Option {
+  id         String    @id @default(uuid())
+  content    String
+  Question   Question? @relation(fields: [questionId], references: [id])
+  questionId String?
+  Answer     Answer?
+}
+
+model Question {
+  id        String   @id @default(uuid())
+  statement String
+  options   Option[]
+  Answer    Answer?
+}
+
+model Answer {
+  id              String   @id @default(uuid())
+  questionId      String   @unique
+  correctOptionId String   @unique
+  question        Question @relation(fields: [questionId], references: [id])
+  correctOption   Option   @relation(fields: [correctOptionId], references: [id])
+}
